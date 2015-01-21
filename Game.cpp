@@ -6,6 +6,7 @@
 #include <SDL/SDL.h>
 #include <SDL/SDL_opengl.h>
 #include <SDL/SDL_mixer.h>
+#include "App.h"
 #include "Game.h"
 #include "FontManager.h"
 #include "TextureManager.h"
@@ -62,8 +63,8 @@ namespace typing
     const float       Game::FINAL_DEATH_PAUSE = 2.0f;
     const float       Game::MIN_POWERUP_SPAWN_TIME = 30.0f;
     const float       Game::MAX_POWERUP_SPAWN_TIME = 180.0f;
-    const float       Game::ORTHO_WIDTH       = 800.0f;
-    const float       Game::ORTHO_HEIGHT      = 600.0f;
+    const float       Game::ORTHO_WIDTH       = App::SCREEN_WIDTH;
+    const float       Game::ORTHO_HEIGHT      = App::SCREEN_HEIGHT;
     const std::string Game::HUD_FONT("fonts/hudfont.fnt");
     const std::string Game::ENDGAME_FONT("fonts/menufont.fnt");
     const std::string Game::MISS_SOUND("sounds/miss.wav");

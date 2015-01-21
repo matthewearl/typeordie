@@ -16,8 +16,8 @@ namespace typing
         // Consts/Enums
         static const unsigned int MAJOR_VERSION;
         static const unsigned int MINOR_VERSION;
-        static const float        SCREEN_WIDTH;
-        static const float        SCREEN_HEIGHT;
+        static const unsigned int SCREEN_WIDTH;
+        static const unsigned int SCREEN_HEIGHT;
 
         enum LogLevel { LOG_ERROR, LOG_DEBUG };
 

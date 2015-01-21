@@ -1,6 +1,7 @@
 #include <SDL/SDL.h>
 #include <SDL/SDL_opengl.h>
 #include <math.h>
+#include "App.h"
 #include "Camera.h"
 
 namespace typing
@@ -31,7 +32,10 @@ namespace typing
     {
         glMatrixMode(GL_PROJECTION);
         glLoadIdentity();
-        gluPerspective(75.0, 800.0 / 600.0, 0.1f, 10000.0f);
+        gluPerspective(75.0,
+                       (float)App::SCREEN_WIDTH / (float)App::SCREEN_HEIGHT,
+                       0.1f,
+                       10000.0f);
 
         glMatrixMode(GL_MODELVIEW);
         glLoadIdentity();
@@ -54,7 +58,7 @@ namespace typing
         gluProject(worldCoords[0], worldCoords[1], worldCoords[2],
             m_modelview, m_projection, view, &x, &y, &z);
     
-        return juzutil::Vector2(static_cast<float>(x), static_cast<float>(600 - y));
+        return juzutil::Vector2(static_cast<float>(x), static_cast<float>(App::SCREEN_HEIGHT - y));
     }
 
 
@@ -62,8 +66,7 @@ namespace typing
     {
         glMatrixMode(GL_PROJECTION);
         glLoadIdentity();
-        // TODO: Get rid of magic numbers
-        glOrtho(0, 800, 600, 0, -1.0f, 1.0f);
+        glOrtho(0, App::SCREEN_WIDTH, App::SCREEN_HEIGHT, 0, -1.0f, 1.0f);
 
         glMatrixMode(GL_MODELVIEW_MATRIX);
     }

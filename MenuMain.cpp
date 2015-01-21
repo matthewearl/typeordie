@@ -19,7 +19,9 @@ namespace typing
     const float       QuitConfirmMenu::ITEM_HEIGHT  = 48.0f;
     const float       QuitConfirmMenu::ITEM_SPACING = 2.0f;
     const float       QuitConfirmMenu::TITLE_HEIGHT = 48.0f;
-    const float       QuitConfirmMenu::TITLE_STARTY = 490.0f;
+    const float       QuitConfirmMenu::TITLE_STARTY = APP.GetScreenHeight() - 
+                                                        2.0f * TITLE_HEIGHT -
+                                                        7.0f * ITEM_SPACING;
 
     void QuitConfirmMenu::Init()
     {
@@ -83,7 +85,9 @@ namespace typing
     const std::string MainMenu::BACKGROUND("textures/menu/background.tga");
     const float       MainMenu::ITEM_HEIGHT  = 32.0f;
     const float       MainMenu::ITEM_SPACING = 2.0f;
-    const float       MainMenu::ITEM_STARTY  = 490.0f;
+    const float       MainMenu::ITEM_STARTY = APP.GetScreenHeight() - 
+                                                        3.0f * ITEM_HEIGHT -
+                                                        7.0f * ITEM_SPACING;
 
     void MainMenu::Init()
     {

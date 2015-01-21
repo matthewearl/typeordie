@@ -11,8 +11,8 @@ namespace typing
 {
     const unsigned int App::MAJOR_VERSION  = 1;
     const unsigned int App::MINOR_VERSION  = 0;
-    const float App::SCREEN_WIDTH          = 800.0f;
-    const float App::SCREEN_HEIGHT         = 600.0f;
+    const unsigned int App::SCREEN_WIDTH   = 1280;
+    const unsigned int App::SCREEN_HEIGHT  = 960;
 
     std::auto_ptr<App> App::m_singleton(new App());
     App& App::GetApp ()
@@ -32,7 +32,10 @@ namespace typing
         SDL_GL_SetAttribute(SDL_GL_DOUBLEBUFFER, 1);
         SDL_GL_SetAttribute(SDL_GL_DEPTH_SIZE, 16);
 
-        if (!SDL_SetVideoMode(800, 600, 32, SDL_OPENGL))
+        if (!SDL_SetVideoMode(App::SCREEN_WIDTH,
+                              App::SCREEN_HEIGHT,
+                              32,
+                              SDL_OPENGL))
         {
             // TODO: throw
         }
@@ -150,7 +153,7 @@ int main ()
     }
     catch (std::exception &e)
     {
-        fprintf(stderr, "%s", e.what());
+        fprintf(stderr, "%s\n", e.what());
     }
 
     typing::APP.Shutdown();
