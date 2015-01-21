@@ -9,6 +9,8 @@
 
 namespace typing
 {
+    const float      BOSS_SCALE = 5.0f;
+
     // The bosses start from the top of the screen and move in before
     // starting their pattern.
     const juzutil::Vector3 BOSS_START_ORIGIN(0.0f, 1400.0f, 0.0f);
@@ -56,7 +58,9 @@ namespace typing
 
             glPushMatrix();
                 glTranslatef(0.0f, 100.0f, 0.0f);
-                glScalef(30.0f, 100.0f, 30.0f);
+                glScalef(BOSS_SCALE * 30.0f,
+                         BOSS_SCALE * 100.0f,
+                         BOSS_SCALE * 30.0f);
                 DrawPyramid(m_colour);
             glPopMatrix();
         glPopMatrix();
@@ -133,7 +137,9 @@ namespace typing
 
             glPushMatrix();
             glTranslatef(0.0f, 100.0f, 0.0f);
-            glScalef(30.0f, 100.0f, 30.0f);
+            glScalef(BOSS_SCALE * 30.0f,
+                     BOSS_SCALE * 100.0f,
+                     BOSS_SCALE * 30.0f);
             DrawPyramid(ColourRGBA::White());
             glPopMatrix();
         glPopMatrix();
