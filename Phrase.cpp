@@ -6,7 +6,7 @@
 namespace typing
 {
     const std::string Phrase::PHRASE_FONT("fonts/menufont.fnt");
-    const float       Phrase::PHRASE_HEIGHT             = 18.0f;
+    const float       Phrase::PHRASE_HEIGHT             = 36.0f;
     const float       Phrase::PHRASE_BORDER_GAP         = 3.0f;
     const float       Phrase::PHRASE_BORDER_LINE_LENGTH = 3.0f;
 
