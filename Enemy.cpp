@@ -15,6 +15,8 @@
 
 namespace typing
 {
+    const float      ENEMY_SCALE = 5.0f;
+
     //////////////////////////////////////////////////////////////////////////
     // BasicEnemy
     //////////////////////////////////////////////////////////////////////////
@@ -33,7 +35,9 @@ namespace typing
         glPushMatrix();
             glTranslatef(m_origin[0], m_origin[1], m_origin[2]);
             glRotatef(m_angle, 0.0f, 0.0f, 1.0f);
-            glScalef(10.0f, 40.0f, 10.0f);
+            glScalef(ENEMY_SCALE * 10.0f,
+                     ENEMY_SCALE * 40.0f,
+                     ENEMY_SCALE * 10.0f);
             DrawPyramid(BASICENEMY_COLOUR, BASICENEMY_OUTLINECOLOUR);
         glPopMatrix();
     }
@@ -102,7 +106,9 @@ namespace typing
             glRotatef(m_angle, 0.0f, 0.0f, 1.0f);
             glPushMatrix();
                 glRotatef(45.0f, 0.0f, 1.0f, 0.0f);
-                glScalef(7.5f, 40.0f, 7.5f);
+                glScalef(ENEMY_SCALE * 7.5f,
+                         ENEMY_SCALE * 40.0f,
+                         ENEMY_SCALE * 7.5f);
                 DrawPyramid(ACCELENEMY_COLOUR, ACCELENEMY_OUTLINECOLOUR);
             glPopMatrix();
         glPopMatrix();
@@ -173,7 +179,9 @@ namespace typing
         glPushMatrix();
             glTranslatef(m_origin[0], m_origin[1], m_origin[2]);
             glRotatef(m_angle, 0.0f, 0.0f, 1.0f);
-            glScalef(3.0f, 16.0f, 3.0f);
+            glScalef(ENEMY_SCALE * 3.0f,
+                     ENEMY_SCALE * 16.0f,
+                     ENEMY_SCALE * 3.0f);
             DrawPyramid(MISSILE_COLOUR, MISSILE_OUTLINECOLOUR);
         glPopMatrix();
     }
@@ -243,13 +251,17 @@ namespace typing
             glTranslatef(m_origin[0], m_origin[1], m_origin[2]);
             glPushMatrix();
                 glRotatef(turretAngle, 0.0f, 0.0f, 1.0f);
-                glScalef(8.0f, 30.0f, 8.f);
+                glScalef(ENEMY_SCALE * 8.0f,
+                         ENEMY_SCALE * 30.0f,
+                         ENEMY_SCALE * 8.f);
                 DrawPyramid(MISSILEENEMY_COLOUR, MISSILEENEMY_OUTLINECOLOUR);
             glPopMatrix();
 
             glPushMatrix();
                 glTranslatef(0.0f, 0.0f, -8.0f);
-                glScalef(30.0f, 20.0f, 20.0f);
+                glScalef(ENEMY_SCALE * 30.0f,
+                         ENEMY_SCALE * 20.0f,
+                         ENEMY_SCALE * 20.0f);
                 DrawCube(MISSILEENEMY_COLOUR, MISSILEENEMY_OUTLINECOLOUR);
             glPopMatrix();
         glPopMatrix();
@@ -333,7 +345,9 @@ namespace typing
             glRotatef(m_angles[0], 0.0f, 0.0f, 1.0f);
             glRotatef(m_angles[1], 0.0f, 1.0f, 0.0f);
             glRotatef(m_angles[2], 1.0f, 0.0f, 0.0f);
-            glScalef(10.0f, 10.0f, 10.0f);
+            glScalef(ENEMY_SCALE * 10.0f,
+                     ENEMY_SCALE * 10.0f,
+                     ENEMY_SCALE * 10.0f);
             DrawDodecahedron(BOMB_COLOUR, outlineColour);
         glPopMatrix();
     }
@@ -418,7 +432,9 @@ namespace typing
         glPushMatrix();
             glTranslatef(m_origin[0], m_origin[1], m_origin[2]);
             glRotatef(m_angle, 0.0f, 0.0f, 1.0f);
-            glScalef(10.0f, 40.0f, 10.0f);
+            glScalef(ENEMY_SCALE * 10.0f,
+                     ENEMY_SCALE * 40.0f,
+                     ENEMY_SCALE * 10.0f);
             DrawPyramid(SEEKER_COLOUR, SEEKER_OUTLINECOLOUR);
         glPopMatrix();
     }
